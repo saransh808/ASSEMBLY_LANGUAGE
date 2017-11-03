@@ -6,6 +6,7 @@ CODE SEGMENT
     START:
     	MOV AX,DATA
     	MOV DS,AX
+    	
     	MOV CX,05H
     	LEA SI,X+04
     	LEA DI,X+04+03

@@ -1,5 +1,6 @@
 DATA SEGMENT
-     MESSAGE DB "ENTER CHARACTER :$"
+     MES1 DB "ENTER CHARACTER :$"
+     MES2 DB "helllo$"
      X DB ?
 DATA ENDS
 CODE SEGMENT 
@@ -8,13 +9,17 @@ START:
       MOV AX,DATA
       MOV DS,AX
      
-      LEA DX,MESSAGE      
+      LEA DX,MES1     
       MOV AH,9
       INT 21H     
      
-      MOV AH,1
+      MOV AH,01h
       INT 21H
-      MOV X,AL 
+      
+     
+    	LEA DX,MES2      
+		MOV AH,09H
+    	INT 21H   
      
       MOV AH,4CH
       INT 21H     
